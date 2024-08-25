@@ -19,6 +19,7 @@ model User {
   email   String
   password    String
   reviews Review[]
+  comments Comment[]
 }
 
 model Item {
@@ -30,11 +31,24 @@ reviews Review[]
 model Review {
  id  Int   @id @default(autoincrement()) 
  title    String
+ text     String
  rating   Int
  userId   Int
  user User @relation(fields: [userId],references: [id])
  itemId   Int
  item Item  @relation(fields: [itemId],references: [id])
+ comments Comment[]
+ createdAt DateTime @default(now())
+ updatedAt DateTime @default(now())
+}
+
+model Comment {
+ id  Int  @id @default(autoincrement()) 
+ content  String
+ userId   Int
+ user User @relation(fields: [userId],references: [id])
+reviewId   Int
+ review Review  @relation(fields: [reviewId],references: [id])
  createdAt DateTime @default(now())
  updatedAt DateTime @default(now())
 }
