@@ -18,5 +18,23 @@ model User {
   name    String
   email   String
   password    String
+  reviews Review[]
+}
 
+model Item {
+id  Int   @id @default(autoincrement())
+title     String
+reviews Review[]
+}
+
+model Review {
+ id  Int   @id @default(autoincrement()) 
+ title    String
+ rating   Int
+ userId   Int
+ user User @relation(fields: [userId],references: [id])
+ itemId   Int
+ item Item  @relation(fields: [itemId],references: [id])
+ createdAt DateTime @default(now())
+ updatedAt DateTime @default(now())
 }
