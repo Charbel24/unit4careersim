@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <h1>API Home</h1>
+    <p><em>Authorization</em>: token</p>
+    <table border="1" >
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Endpoint</th>
+                <th>Payload</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Base URL:</td>
+                <td>https://unit4careersim.onrender.com</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>Register user:</td>
+                <td>POST https://unit4careersim.onrender.com/api/users</td>
+                <td>{
+                    "name": "rob",
+                    "email": "rob@yahoo.com",
+                    "password": "3282"
+                  }</td>
+            </tr>
+
+            <tr>
+                <td>Login:</td>
+                <td>POST https://unit4careersim.onrender.com/api/users/login</td>
+                <td>{
+                    "email": "rob@yahoo.com",
+                    "password": "3282"
+                  }</td>
+            </tr>
+           
+            <tr>
+                <td>User Details/Profile:</td>
+                <td>GET https://unit4careersim.onrender.com/api/users/:id</td>
+                <td>null</td>
+            </tr>
+
+            <tr>
+                <td>List All items:</td>
+                <td>GET https://unit4careersim.onrender.com/api/items/</td>
+                <td>null</td>
+            </tr>
+
+            <tr>
+                <td>Show item Details with reviews and comments:</td>
+                <td>GET https://unit4careersim.onrender.com/api/items/:id</td>
+                <td>null</td>
+            </tr>
+
+            <tr>
+                <td>Creat item:</td>
+                <td>POST https://unit4careersim.onrender.com/api/items</td>
+                <td>{
+                    "title": "Iphone 15 pm"
+                  }</td>
+            </tr>
+
+            <tr>
+                <td>Creat Review:</td>
+                <td>POST https://unit4careersim.onrender.com/api/reviews</td>
+                <td>{
+                    "title": "not very baaad",
+                    "text": "cess the website via the Internet so I can browse and read reviews.",
+                    "rating": 2.5,
+                    "itemId": 2
+                  }</td>
+            </tr>
+
+            <tr>
+                <td>Creat Review:</td>
+                <td>PUT https://unit4careersim.onrender.com/api/reviews/:id</td>
+                <td>{
+                    "title": "not very baaad",
+                    "text": "cess the website via the Internet so I can browse and read reviews.",
+                    "rating": 2.5,
+                    "itemId": 2
+                  }</td>
+            </tr>
+
+            <tr>
+                <td>Delete Review:</td>
+                <td>DELETE https://unit4careersim.onrender.com/api/reviews/:id</td>
+                <td>null</td>
+            </tr>
+
+            <tr>
+                <td>Create Comment:</td>
+                <td>DELETE https://unit4careersim.onrender.com/api/comments</td>
+                <td>{
+                    "content": "accurate review",
+                    "reviewId": 3
+                  }</td>
+            </tr>
+
+            <tr>
+                <td>Update Comment:</td>
+                <td>PUT https://unit4careersim.onrender.com/api/comments/:id</td>
+                <td>{"content": "accurate review"}</td>
+            </tr>
+
+
+            <tr>
+                <td>Delete Comment:</td>
+                <td>DELETE https://unit4careersim.onrender.com/api/comments/:id</td>
+                <td>null</td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>
